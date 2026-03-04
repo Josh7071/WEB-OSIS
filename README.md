@@ -50,3 +50,9 @@ npm run dev
 - Deploy frontend dan backend sebagai dua service terpisah.
 - Set environment variables dari `.env.example` di Railway dashboard.
 - Pastikan service account tidak pernah dikirim ke frontend.
+
+## Keamanan Kredensial
+- **Jangan pernah commit** file kredensial service account (`credentials.json`), private key, atau nilai asli `GOOGLE_CREDENTIALS` ke repository.
+- Simpan semua secret hanya di environment variable Railway/hosting.
+- Backend sudah disiapkan untuk membaca kredensial dari `GOOGLE_CREDENTIALS` atau `backend/credentials.json` lokal (yang di-ignore git).
+- Pastikan repository tetap bersih dari data sensitif sebelum push (`git status`, `git diff`, dan secret scan).
